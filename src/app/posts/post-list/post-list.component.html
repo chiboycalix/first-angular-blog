@@ -3,7 +3,8 @@
         <mat-card-content routerLink="{{post.id}}">
             <img src="{{post.image}}">
             <h2>{{post.title}}</h2>
-            <p><small>Posted by: {{post.author}} &bull; on {{post.published}}</small></p>
+            <p><small>Posted by: {{post.author}} </small></p>
+            <p><small>Date Posted: {{post.published | date: 'medium'}}</small></p>
         </mat-card-content>
         <mat-card-actions align="end" *ngIf="authService.currentUserId === post.authorId">
             <div class="delete-button">

@@ -2,6 +2,14 @@
 .spacer{
     flex: 1 1 auto;
 }
+.new-post-btn{
+    position: absolute;
+    left: 50%;
+}
+span .display-name{
+    position: relative;
+    padding-right: 50px;
+}
 .angular-bar{
     outline:none;
     cursor: pointer;

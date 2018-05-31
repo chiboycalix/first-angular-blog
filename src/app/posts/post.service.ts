@@ -15,7 +15,7 @@ postDoc: AngularFirestoreDocument<Post>;
 
 
   constructor(private afs: AngularFirestore) {
-           afs.firestore.settings({ timestampsInSnapshots: true });
+      // afs.firestore.settings({ timestampsInSnapshots: true });
 
          // const timestamp = snapshot.get('created_at');
          // const date = timestamp.toDate();

@@ -3,11 +3,24 @@
     <span routerLink="/blog" class="angular-bar">Nonso Blog</span>
     <span class="spacer"></span>
     <div *ngIf="authService.user | async as user; else showLogin">
-      <button mat-raised-button color="accent" routerLink="/dashboard">Add new Post</button>
-      <button mat-button (click)="logout()">Logout</button>
+      <!--<button mat-raised-button color="accent" routerLink="/dashboard" class="new-post-btn">Add new Post</button>-->
+      <button mat-raised-button color="accent" [matMenuTriggerFor]="menu" style="margin-right: 10px;">
+        <span>Welcome {{user.displayName}}</span>
+      </button>
+      <mat-menu #menu="matMenu"  yPosition="below" [overlapTrigger]="false" xPosition="after">
+        <button mat-menu-item >
+          <i class="fa fa-user" style="padding-right: 7px;"></i><span> Profile</span>
+        </button>
+        <button mat-menu-item routerLink="/dashboard">
+          <i class="fa fa-cog" style="padding-right: 7px;"></i><span> Create Post</span>
+        </button>
+        <button mat-menu-item (click)="logout()">
+          <i class="fa fa-exclamation-circle" style="padding-right: 7px;"></i>
+          <span>Logout</span>
+        </button>
+      </mat-menu>
     </div>
     <ng-template #showLogin>
-
      <button mat-button (click)="login()">Login</button>
     </ng-template>
   </mat-toolbar-row>
