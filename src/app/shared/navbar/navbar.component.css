@@ -1,0 +1,14 @@
+
+.spacer{
+    flex: 1 1 auto;
+}
+.angular-bar{
+    outline:none;
+    cursor: pointer;
+}
+span{
+    font-family: Consolas;
+}
+button{
+    font-family: Consolas;
+}

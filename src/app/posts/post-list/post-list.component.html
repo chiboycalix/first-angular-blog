@@ -1,0 +1,17 @@
+<section>
+    <mat-card *ngFor="let post of posts | async">
+        <mat-card-content routerLink="{{post.id}}">
+            <img src="{{post.image}}">
+            <h2>{{post.title}}</h2>
+            <p><small>Posted by: {{post.author}} &bull; on {{post.published}}</small></p>
+        </mat-card-content>
+        <mat-card-actions align="end" *ngIf="authService.currentUserId === post.authorId">
+            <div class="delete-button">
+                <button mat-icon-button (click)="delete(post.id)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </div>
+
+        </mat-card-actions>
+    </mat-card>
+</section>
